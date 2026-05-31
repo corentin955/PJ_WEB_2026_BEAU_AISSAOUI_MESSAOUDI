@@ -1,0 +1,318 @@
+/* ── Layout ─────────────────────────────────────────────────────────────────── */
+
+.admin-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.admin-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.admin-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.admin-section-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  letter-spacing: 0.04em;
+  color: var(--text);
+}
+
+/* ── Stats cards ─────────────────────────────────────────────────────────────── */
+
+.admin-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.admin-stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.admin-stat-icon {
+  color: var(--primary);
+}
+
+.admin-stat-value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--text);
+  line-height: 1;
+}
+
+.admin-stat-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ── Filter tabs ─────────────────────────────────────────────────────────────── */
+
+.admin-filter-tabs {
+  display: flex;
+  gap: 6px;
+}
+
+.admin-filter-tab {
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.admin-filter-tab:hover {
+  background: var(--input-bg);
+  color: var(--text);
+}
+
+.admin-filter-tab.active {
+  background: var(--primary);
+  color: var(--on-primary);
+  border-color: var(--primary);
+  font-weight: 600;
+}
+
+/* ── Table ───────────────────────────────────────────────────────────────────── */
+
+.admin-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.admin-table th {
+  background: var(--bg-card2);
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.admin-table td {
+  padding: 12px 16px;
+  color: var(--text);
+  border-bottom: 1px solid var(--border2);
+  vertical-align: middle;
+}
+
+.admin-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-table tbody tr:hover td {
+  background: var(--input-bg);
+}
+
+.admin-cell-muted {
+  color: var(--text-secondary) !important;
+  font-size: 0.83rem;
+}
+
+.admin-empty {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 32px 16px !important;
+  font-size: 0.9rem;
+}
+
+/* ── Badges ──────────────────────────────────────────────────────────────────── */
+
+.admin-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.admin-badge.actif {
+  background: rgba(0, 200, 83, 0.15);
+  color: var(--success);
+}
+
+.admin-badge.suspendu {
+  background: rgba(255, 68, 68, 0.12);
+  color: var(--danger);
+}
+
+.admin-badge.patient {
+  background: rgba(168, 224, 99, 0.12);
+  color: var(--primary);
+}
+
+.admin-badge.praticien {
+  background: rgba(255, 179, 0, 0.12);
+  color: var(--warning);
+}
+
+/* ── Action buttons ──────────────────────────────────────────────────────────── */
+
+.admin-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: nowrap;
+}
+
+.admin-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 11px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.15s;
+}
+
+.admin-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.admin-btn-success {
+  background: rgba(0, 200, 83, 0.12);
+  color: var(--success);
+  border-color: rgba(0, 200, 83, 0.3);
+}
+
+.admin-btn-success:hover:not(:disabled) {
+  background: rgba(0, 200, 83, 0.22);
+}
+
+.admin-btn-warn {
+  background: rgba(255, 179, 0, 0.1);
+  color: var(--warning);
+  border-color: rgba(255, 179, 0, 0.3);
+}
+
+.admin-btn-warn:hover:not(:disabled) {
+  background: rgba(255, 179, 0, 0.2);
+}
+
+.admin-btn-danger {
+  background: rgba(255, 68, 68, 0.1);
+  color: var(--danger);
+  border-color: rgba(255, 68, 68, 0.3);
+}
+
+.admin-btn-danger:hover:not(:disabled) {
+  background: rgba(255, 68, 68, 0.2);
+}
+
+/* ── States ──────────────────────────────────────────────────────────────────── */
+
+.admin-loader {
+  display: flex;
+  justify-content: center;
+  padding: 48px;
+  color: var(--text-muted);
+}
+
+.admin-error {
+  padding: 16px 20px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 68, 68, 0.08);
+  color: var(--danger);
+  border: 1px solid rgba(255, 68, 68, 0.2);
+  font-size: 0.9rem;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Confirm Modal ───────────────────────────────────────────────────────────── */
+
+.confirm-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+}
+
+.confirm-modal {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px 28px 24px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.confirm-modal-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.confirm-modal-message {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 24px;
+}
+
+.confirm-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────────── */
+
+@media (max-width: 600px) {
+  .admin-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-actions {
+    flex-wrap: wrap;
+  }
+}
