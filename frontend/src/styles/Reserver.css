@@ -1,0 +1,439 @@
+.reserver-page {
+  min-height: calc(100vh - 62px);
+  padding: 0 24px 64px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── Stepper ── */
+.reserver-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0 24px;
+}
+
+.step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.step-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: var(--bg-main);
+  transition: all 0.3s;
+}
+
+.step-item.active .step-circle {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: rgba(168, 224, 99, 0.1);
+}
+
+.step-item.done .step-circle {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.step-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+.step-item.active .step-label {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.step-line {
+  flex: 1;
+  height: 2px;
+  background: var(--border);
+  min-width: 32px;
+  max-width: 80px;
+  margin-bottom: 22px;
+  transition: background 0.3s;
+}
+
+.step-line.done { background: var(--primary); }
+
+/* ── Card base ── */
+.reserver-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.reserver-step-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+  color: var(--text);
+}
+
+/* ── Step 1 service preview ── */
+.rsv-service-row {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.rsv-service-img {
+  width: 200px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.rsv-service-info { flex: 1; }
+
+.rsv-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+
+.rsv-praticien {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.rsv-titre {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.rsv-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.83rem;
+  margin-bottom: 12px;
+}
+
+.rsv-meta-row {
+  display: flex;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.rsv-meta-row span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.rsv-desc {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+
+.rsv-price-big {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--primary);
+  letter-spacing: 0.03em;
+}
+
+/* ── Actions row ── */
+.reserver-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Step 2 layout ── */
+.reserver-step2-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) 280px;
+  gap: 20px;
+  align-items: start;
+  max-height: calc(100vh - 160px);
+  overflow: hidden;
+}
+
+.reserver-cal-card {
+  max-width: none;
+  margin: 0;
+  padding: 20px;
+}
+
+.reserver-cal-card .reserver-step-title {
+  margin-bottom: 14px;
+}
+
+/* ── Calendar ── */
+.cal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.cal-month-label {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.cal-nav {
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px;
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.cal-nav:hover {
+  background: rgba(168, 224, 99, 0.1);
+  border-color: var(--primary);
+}
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  margin-bottom: 12px;
+}
+
+.cal-day-label {
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-dim);
+  font-weight: 600;
+  padding: 4px 0;
+  letter-spacing: 0.04em;
+}
+
+.cal-day {
+  height: 44px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: none;
+  color: var(--text);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  font-family: var(--font-body);
+}
+
+.cal-day:hover:not(:disabled) {
+  background: rgba(168, 224, 99, 0.12);
+  border-color: rgba(168, 224, 99, 0.3);
+  color: var(--primary);
+}
+
+.cal-day.selected {
+  background: var(--primary);
+  color: var(--on-primary);
+  font-weight: 700;
+  border-color: var(--primary);
+}
+
+.cal-day.past {
+  opacity: 0.22;
+  cursor: not-allowed;
+}
+
+/* ── Time slots ── */
+.slots-section {
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  margin-bottom: 4px;
+}
+
+.slots-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.slots-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+
+.slot-btn {
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--input-bg);
+  color: var(--text);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: var(--font-body);
+}
+
+.slot-btn:hover {
+  border-color: var(--primary);
+  background: rgba(168, 224, 99, 0.08);
+  color: var(--primary);
+}
+
+.slot-btn.selected {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--on-primary);
+  font-weight: 700;
+}
+
+/* ── Recap sidebar ── */
+.reserver-recap {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  position: sticky;
+  top: 80px;
+}
+
+.recap-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.recap-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.recap-row svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--primary);
+}
+
+.recap-row-accent { color: var(--primary); }
+.recap-row-accent svg { color: var(--primary); }
+
+.recap-price {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  letter-spacing: 0.03em;
+}
+
+/* ── Step 4 confirmation ── */
+.confirm-recap {
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+  margin-bottom: 8px;
+}
+
+.confirm-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border2);
+}
+
+.confirm-row:last-child { border-bottom: none; }
+
+.confirm-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.confirm-value {
+  font-size: 0.88rem;
+  text-align: right;
+  color: var(--text);
+}
+
+.confirm-price-row { margin-top: 4px; }
+
+.confirm-price {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--primary);
+  letter-spacing: 0.03em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .reserver-step2-layout {
+    grid-template-columns: 1fr;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .reserver-recap { position: static; }
+}
+
+@media (max-width: 640px) {
+  .rsv-service-row { flex-direction: column; }
+
+  .rsv-service-img { width: 100%; height: 180px; }
+
+  .slots-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .reserver-stepper { padding: 20px 0 28px; }
+
+  .step-line { min-width: 16px; }
+
+  .reserver-card { padding: 20px; }
+}
+
+@media (max-width: 420px) {
+  .step-label { display: none; }
+  .slots-grid { grid-template-columns: repeat(3, 1fr); }
+}

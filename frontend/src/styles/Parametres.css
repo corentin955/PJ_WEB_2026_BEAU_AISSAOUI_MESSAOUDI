@@ -1,0 +1,59 @@
+/* Paramètres — section row layout */
+
+.params-section-row {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.params-left-zone {
+  flex: 0 0 auto;
+  min-width: 200px;
+  width: 220px;
+  padding-right: 24px;
+  margin-right: 24px;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-self: stretch;
+  justify-content: center;
+}
+
+.params-right-zone {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+}
+
+.params-notif-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .params-left-zone {
+    width: 100%;
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 16px;
+    margin-right: 0;
+    margin-bottom: 16px;
+    align-self: auto;
+  }
+
+  .params-right-zone {
+    width: 100%;
+  }
+
+  .params-notif-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

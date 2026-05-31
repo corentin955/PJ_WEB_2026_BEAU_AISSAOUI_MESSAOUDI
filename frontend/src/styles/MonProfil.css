@@ -1,0 +1,55 @@
+/* Mon Profil — responsive helpers */
+
+.profil-identity-row {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.profil-identity-left {
+  flex: 0 0 auto;
+  min-width: 220px;
+  width: 240px;
+  padding-right: 28px;
+  border-right: 1px solid var(--border);
+  margin-right: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.profil-identity-right {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+}
+
+.profil-sport-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profil-identity-left {
+    width: 100%;
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .profil-identity-right {
+    width: 100%;
+  }
+
+  .profil-sport-grid {
+    grid-template-columns: 1fr;
+  }
+}
